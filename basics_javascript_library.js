@@ -1133,4 +1133,153 @@ var newRecords = updateRecords(5439, "artist", "ABBA");
 
 //Test
 console.log(newRecords);
-    //Result 5439{album: "ABBA Gold", artist: "ABBA"}
+//Result 5439{album: "ABBA Gold", artist: "ABBA"}
+
+//Iterate with JavaScript While Loops
+
+var myArray = [];
+var i = 0;
+while (i < 5) {
+    myArray.push(i);
+    i++;
+}
+
+//Iterate with JavaScript For Loops
+
+var myArray = [];
+
+for (var i = 1; i < 6; i++) {
+    myArray.push(i);
+}
+
+console.log(myArray);
+//Result myArray[1,2,3,4,5]
+
+//Iterate Odd Numbers with a For Loop
+
+var myArray = [];
+
+for (var i = 1; i < 10; i += 2) {
+    myArray.push(i);
+}
+
+console.log(myArray);
+//Result myArray[1,3,5,7,9]
+
+//Count Backwards with a For Loop
+
+var myArray = [];
+for (var i = 9; i > 0; i -= 2) {
+    myArray.push(i);
+}
+
+console.log(myArray);
+//Result myArray[9,7,5,3,1]
+
+//Iterate through an Array with a For Loop
+
+var myArr = [2, 3, 4, 5, 6];
+var total = 0;
+for (var i = 0; i < myArr.length; i++) {
+    console.log(myArr[i]);
+    total += myArr[i];
+}
+
+//Result myArr[2,3,4,5,6] ( 2 + 3 + 4 + 5 + 6 ) total = 20;
+
+//Nesting For Loops
+function multiplyAll(arr) {
+    var product = 1;
+    // Only change code below this line
+    for (var i = 0; i < arr.length; i++) {
+        console.log(arr[i]);
+        for (var j = 0; j < arr[i].length; j++) {
+            console.log(arr[i][j]);
+            product *= arr[i][j];
+        }
+    }
+    // Only change code above this line
+    return product;
+}
+
+// Modify values below to test your code
+multiplyAll([[1, 2], [3, 4], [5, 6, 7]]);
+
+//Iterate with JavaScript Do...While Loops
+var myArray = [];
+var i = 10;
+
+do {
+    myArray.push(i);
+    i++
+} while (i < 10);
+//Result [11]
+
+//Profile Lookup
+
+//Setup
+var contacts = [
+    {
+        "firstName": "Akira",
+        "lastName": "Laine",
+        "number": "0543236543",
+        "likes": ["Pizza", "Coding", "Brownie Points"]
+    },
+    {
+        "firstName": "Harry",
+        "lastName": "Potter",
+        "number": "0994372684",
+        "likes": ["Hogwarts", "Magic", "Hagrid"]
+    },
+    {
+        "firstName": "Sherlock",
+        "lastName": "Holmes",
+        "number": "0487345643",
+        "likes": ["Intriguing Cases", "Violin"]
+    },
+    {
+        "firstName": "Kristian",
+        "lastName": "Vos",
+        "number": "unknown",
+        "likes": ["JavaScript", "Gaming", "Foxes"]
+    }
+];
+
+
+function lookUpProfile(name, prop) {
+    for (var i = 0; i < contacts.length; i++) {
+        console.log(i);
+        if (contacts[i].firstName === name) {
+            if (contacts[i].hasOwnProperty(prop)) {
+                return contacts[i][prop];
+            } else {
+
+                return "No such property";
+            }
+        }
+    }
+    return "No such contact";
+}
+
+
+// Change these values to test your function
+lookUpProfile("Akira", "likes");
+//Return array
+
+//Generate Random Fraction with JavaScript
+
+function randomFraction() {
+
+    return Math.random();
+}
+//Random Fraction 0 or between 0 and 1 
+
+//Generate Random Whole numbers with JavaScript
+
+function randomWholeNum() {
+
+    return Math.floor(Math.random() * 10);
+}
+
+//Generate Random Whole numbers within a range
+
