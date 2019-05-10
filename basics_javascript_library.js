@@ -110,13 +110,13 @@ var lastName = "A Last Name";
 
 var fullName = firstName + " " + lastName;
 console.log(fullName);
-//result Jacob Carr
+//result A Name A Last Name
 
 //Escaping Literal Quotes in Strings
 
 var escapeLiteral = fullName + " said in a recent Facebook post,\"I think that programming is awesome.\"";
 console.log(escapeLiteral);
-// Result Jacob Carr said in a recent Facebook post, "I think that programming is awesome."
+// Result A Name A Last Name said in a recent Facebook post, "I think that programming is awesome."
 
 var quoteString = 'Today in a recent press release anthoy scott said "I can see the lakers going to the finals this season."';
 //Single Quotes and double quotes can be used in javascript and be used to cancel eachother out
