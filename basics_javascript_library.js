@@ -105,8 +105,8 @@ console.log("Result = " + compoundAssign + " (Does result = 5?");
 
 //String Variable
 
-var firstName = "Jacob";
-var lastName = "Carr";
+var firstName = "A Name";
+var lastName = "A Last Name";
 
 var fullName = firstName + " " + lastName;
 console.log(fullName);
