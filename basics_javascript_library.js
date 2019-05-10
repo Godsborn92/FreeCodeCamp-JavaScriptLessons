@@ -1297,6 +1297,91 @@ function randomWholeNum() {
 
     return Math.floor(Math.random() * 10);
 }
+//Random Whole number between 0 and 9
 
 //Generate Random Whole numbers within a range
 
+
+function randomRange(myMin, myMax) {
+
+    return Math.floor(Math.random() * (myMax - myMin + 1) + myMin);
+}
+var myRandom = randomRange(5, 15);
+
+//Generates a random whole number between the given values thats greater than or equal to myMin and less than or equal to myMax
+//Number can be equal to the min or max
+
+// Formula explained Math.floor(Math.random() * (15 - 5 + 1) + 5)
+//                                            * (11) + 5
+//                  Math.floor(Math.random--num between 0 and 1 but never 1 completely) * 11 + 5
+//                  Math.floor(0.65) * 11 + 5
+//                  Math.floor(12.15)
+//                  Math.floor--greatest intger less than or equal to(12.15)
+//                  Anwser = 12
+
+//Use the parseInt Function
+
+function convertToInteger(str) {
+
+    return parseInt(str);
+}
+
+convertToInteger("56");
+//Result 56
+
+//Use the parseInt Function with a Radix
+function convertToInteger(str) {
+    return parseInt(str, 2); // binary is base 2
+}
+var binaryNum = convertToInteger("10011");
+console.log(binaryNum);
+//Result 19
+
+//Use the Conditional(Ternary) Operator (Another way to write and If---Else---Statement)
+function checkEqual(a, b) {
+    return a === b ? true : false;
+}
+checkEqual(1, 2);
+//Result false
+
+//Use Multiple Conditional (Ternary) Operators
+function checkSign(num) {
+    return (num > 0) ? "positive" : (num < 0) ? "negative" : "zero";
+}
+checkSign(10);
+//Result positive
+
+
+/*--------------------------------------
+
+Introduction to the ES6 Challenges
+
+----------------------------------------*/
+
+//ES6: Explore Difference Between the var and let Keywords
+let catName;
+let quote;
+function catTalk() {
+    "use strict";
+
+    catName = "Oliver";
+    quote = catName + " says Meow!";
+
+}
+catTalk();
+//Undefined
+
+//ES6: Compare Scopes of the var and let Keywords
+function checkScope() {
+    "use strict";
+    let i = "function scope";
+    if (true) {
+        let i = "block scope";
+        console.log("Block scope i is: ", i);
+    }
+    console.log("Function scope i is: ", i);
+    return i;
+}
+    //Result function scope
+
+//ES6:Declare a Read-Only Variable with the const Keyword
