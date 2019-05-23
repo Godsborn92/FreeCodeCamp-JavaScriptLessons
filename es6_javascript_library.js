@@ -249,7 +249,9 @@ function makeList(arr) {
     "use strict";
 
     // change code below this line
-    const resultDisplayArray = null;
+    const resultDisplayArray = [`<li class="text-warning">${result.failure[0]}</li>`,
+    `<li class="text-warning">${result.failure[1]}</li>`,
+    `<li class="text-warning">${result.failure[2]}</li>`];
     // change code above this line
 
     return resultDisplayArray;
@@ -261,3 +263,36 @@ function makeList(arr) {
  *   `<li class="text-warning">linebreak</li>` ]
  **/
 const resultDisplayArray = makeList(result.failure);
+
+//ES6:Write Concise Object Literal Declarations Using Simple Fields
+
+const createPerson = (name, age, gender) => {
+    "use strict";
+    // change code below this line
+    return {
+        name,
+        age,
+        gender
+    };
+    // change code above this line
+};
+console.log(createPerson("Zodiac Hasbro", 56, "male")); // returns a proper object
+
+//ES6:Write Concise Declarative Functions with ES6
+
+// change code below this line
+const bicycle = {
+    gear: 2,
+    //setGear: function (newGear) {
+    //  "use strict";
+    //this.gear = newGear; -- Refactor for shorthand syntax
+    setGear(newGear) {
+        "use strict";
+        this.gear = newGear;
+    }
+};
+// change code above this line
+bicycle.setGear(3);
+console.log(bicycle.gear);
+
+//ES6:Use class Syntax to Define a Constructor Function
