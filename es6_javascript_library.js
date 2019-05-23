@@ -155,7 +155,7 @@ let arr2;
     arr2 = [...arr1]; // change this line
 })();
 console.log(arr2);
-//['JAN', 'FEB', 'MAR', 'APR', 'MAY']
+//['JAN', 'FEB', 'MAR', 'APR', 'MAY'] --Comma Seperated List(Cannot choose elements to assign to variables)
 
 //ES6:Use Destructuring Assignment to Assign Variable from Objects
 const AVG_TEMPERATURES = {
@@ -175,3 +175,89 @@ console.log(getTempOfTmrw(AVG_TEMPERATURES)); // should be 79
 
 //ES6:Use Destructuring Assignment to Assign Variable from Nested Objects
 
+const LOCAL_FORECAST = {
+    today: { min: 72, max: 83 },
+    tomorrow: { min: 73.3, max: 84.6 }
+};
+
+function getMaxOfTmrw(forecast) {
+    "use strict";
+    // change code below this line
+    const { tomorrow: { max: maxOfTomorrow } } = forecast; // change this line
+    // change code above this line
+    return maxOfTomorrow;
+}
+
+console.log(getMaxOfTmrw(LOCAL_FORECAST)); // should be 84.6
+
+//ES6:Use Destructuring Assignment to Assign Variables from Arrays
+
+let a = 8, b = 6;
+(() => {
+    "use strict";
+    [b, a] = [a, b]; //No need of const [b,a] as it will keep the effect of assignment local. const [b,a] = [a,b] will result in the value of a,b as undefined(simple assignment rule left to right).
+})();
+console.log(a); // should be 6
+console.log(b); // should be 8
+
+//ES6:Use Destructuring Assignment with the Rest Operator to Reassign Array Elements
+
+const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+function removeFirstTwo(list) {
+    "use strict";
+    // change code below this line
+    const [a, b, ...arr] = list; // change this
+    // change code above this line
+    return arr;
+}
+const arr = removeFirstTwo(source);
+console.log(arr); // should be [3,4,5,6,7,8,9,10]
+console.log(source); // should be [1,2,3,4,5,6,7,8,9,10];
+
+//ES6:Use Destructuring Assignment to Pass an Object as a Function's Parameters
+
+const stats = {
+    max: 56.78,
+    standard_deviation: 4.34,
+    median: 34.54,
+    mode: 23.87,
+    min: -0.75,
+    average: 35.85
+};
+const half = (function () {
+    "use strict"; // do not change this line
+
+    // change code below this line
+    return function half({ max, min }) {
+        // use function argument destructuring
+        return (stats.max + stats.min) / 2.0;
+    };
+    // change code above this line
+
+})();
+console.log(stats); // should be object
+console.log(half(stats)); // should be 28.015
+
+//ES6:Create Strings using Template Literals
+
+const result = {
+    success: ["max-length", "no-amd", "prefer-arrow-functions"],
+    failure: ["no-var", "var-on-top", "linebreak"],
+    skipped: ["id-blacklist", "no-dup-keys"]
+};
+function makeList(arr) {
+    "use strict";
+
+    // change code below this line
+    const resultDisplayArray = null;
+    // change code above this line
+
+    return resultDisplayArray;
+}
+/**
+ * makeList(result.failure) should return:
+ * [ `<li class="text-warning">no-var</li>`,
+ *   `<li class="text-warning">var-on-top</li>`, 
+ *   `<li class="text-warning">linebreak</li>` ]
+ **/
+const resultDisplayArray = makeList(result.failure);
