@@ -124,5 +124,27 @@ console.log(matchedCriminals);
 
 //Regular Expressions:Match Beginning String Patterns
 
+let rickyAndCal = "Cal and Ricky both like racing.";
+let calRegex = /^Cal/; //Check the search pattern at the beginning of a string
+let result = calRegex.test(rickyAndCal);
+//Return True
+
+//Regular Expressions:Match Ending String Patterns
+
+let caboose = "The last car on a train is the caboose";
+let lastRegex = /caboose$/; // Check the search pattern at the end of a string
+let result = lastRegex.test(caboose);
+//Result True
+
+//Regular Expressions:Match All Letters and Numbers
+
+//Into to Shorthand Character classes
+
+let quoteSample = "The five boxing wizards jump quickly.";
+let alphabetRegexV2 = /\w/g; // shorthand character class for [A-Za-z0-9_]
+let result = quoteSample.match(alphabetRegexV2).length;
+//Result 31
+
+//Regular Expressions:Match Everything But Letters and Numbers
 
 
