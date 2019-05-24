@@ -296,3 +296,93 @@ bicycle.setGear(3);
 console.log(bicycle.gear);
 
 //ES6:Use class Syntax to Define a Constructor Function
+
+function makeClass() {
+    "use strict";
+    /* Alter code below this line */
+    class Vegetable {
+        constructor(name) {
+            this.name = name;
+        }
+    }
+    /* Alter code above this line */
+    return Vegetable;
+}
+const Vegetable = makeClass();
+const carrot = new Vegetable('carrot');
+console.log(carrot.name); // => should be 'carrot'
+
+//ES6:Use getters and setters to Control Access to an Object
+
+function makeClass() {
+    "use strict";
+    /* Alter code below this line */
+    class Thermostat {
+        constructor(Fahrenheit) {
+            this.Fahrenheit = Fahrenheit;
+        }
+        //getter
+        get temperature() {
+            return 5 / 9 * (this.Fahrenheit - 32); //Celsius Conversion
+        }
+        //setter
+        set temperature(Celsius) {
+            this.Fahrenheit = Celsius * 9.0 / 5 + 32; // Fahrenheit Conversion
+        }
+    }
+    /* Alter code above this line */
+    return Thermostat;
+}
+const Thermostat = makeClass();
+const thermos = new Thermostat(76); // setting in Fahrenheit scale
+let temp = thermos.temperature; // 24.44 in C
+thermos.temperature = 26;
+temp = thermos.temperature; // 26 in C
+
+//ES6:Understand the Differences Between import and require
+
+"use strict";
+capitalizeString("hello!");
+
+//Add the appropriate import statement that will allow the current file to use the capitalizeString function. The file where this function lives is called "string_functions", and it is in the same directory as the current file.
+
+import { capitalizeString } from "string_functions"
+
+//ES6:Use export to Reuse a Code Block
+
+//const foo = "bar";
+//const bar = "foo";
+
+//Below are two variables that I want to make available for other files to use. Utilizing the first way I demonstrated export, export the two variables.
+
+export const foo = "bar";
+export const bar = "foo";
+
+//ES6:Use * to Import Everything from a File
+
+import * as stringModule from "capitalize_strings"; //Will throw error in editior because the object created never recieves any values
+
+//ES6:Create an Export Fallback with export default
+
+//"use strict";
+//function subtract(x,y) {return x - y;}
+
+//The following function should be the fallback value for the module. Please add the necessary code to do so.
+
+export default function subtract(x, y) { return x - y; } //If you get stuck just add "export default" to function in freeCodeCamp
+
+//ES6:Import a Default Export
+
+//"use strict";
+//subtract(7,4);
+//In the following code, please import the default export, subtract, from the file "math_functions", found in the same directory as this file.
+
+import subtract from "math_functions"; //just an example this is not a real location only for freeCodeCamp's Workspace
+subtract(7, 4);
+
+
+/*
+
+----------- End of ES6 Section -----------
+
+*/
