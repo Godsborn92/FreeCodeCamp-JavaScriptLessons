@@ -215,5 +215,39 @@ let result = favRegex.test(favWord); // ---Look into Assertions a little more on
 //Regular Expressions:Positive and Negative Lookahead
 
 let sampleWord = "astronaut";
-let pwRegex = /(?=\w{5,})(?=\D*\d{2})/; // Lookahead assertion Matched x only if x is followed by y.In this case Any characters 5 or greater and have two consecutive digits
+let pwRegex = /(?=\w{5,})(?=\D*\d{2})/; // Lookahead assertion- (Matched x only if x is followed by y) Use 2 lookaheads.In this case Any characters 5 or greater. Any two consecutive digits
 let result = pwRegex.test(sampleWord);
+
+//Regular Expressions:Resuse Patterns Using Capture Groups
+
+let repeatNum = "42 42 42";
+let reRegex = /^(\d+)\s\1\s\1$/; // Use Capture Groups or () to repeat substrings. In this case Match Numbers repeated only 3 times in each string each sepearated by a space
+
+//Explained
+// **** /^(\d+) --- any digit repeated more then once at the beginning of a string
+// **** /^(\d+)\s\1 --- followed by a space repeat pattern once
+// **** /^(\d+)\s\1\s\1$ --- followed by a space with pattern repeated once at the end of string
+
+let result = reRegex.test(repeatNum);
+let test = repeatNum.match(reRegex);
+console.log(test); // Output the arrary and capture group to the console for testing
+
+//Regular Expressions:Use Capture Groups to Search and Replace
+
+let huhText = "This sandwich is good.";
+let fixRegex = /good/; // Regex find
+let replaceText = "okey-dokey"; // Replacement used in replace method
+let result = huhText.replace(fixRegex, replaceText);
+
+//Regular Expressions:Remove Whitespace from Start and End
+
+let hello = "   Hello, World!  ";
+let wsRegex = /^\s+(Hello),\s(World!)\s+$/; // Regex to remove whitespace from the beginning and end of strings(This breaks Hello and World! into Capture Groups)
+let test = hello.match(wsRegex); // Test Match
+let result = hello.replace(wsRegex, "$1, $2"); // With the Replace method I use the $1 value from the Capture group within quoutes and , $2 value from Capture Group to create final result.
+
+/*
+
+----------- End of Regular Expressions Section -----------
+
+*/
