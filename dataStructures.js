@@ -146,3 +146,21 @@ console.log(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3));
 
 //Basic Data Structures: Create complex multi-dimensional arrays
 
+let myNestedArray = ['level 1',
+    ['level 2'],
+    [
+        ['level 3'], ['deep']
+    ],
+    [
+        [
+            ['level 4'], ['deeper']
+        ],
+        [
+            [
+                ['level 5'], ['deepest']
+            ]
+        ]
+    ]
+];
+
+//Basic Data Structures:Add Key-Value Pairs to Javascript Objects
