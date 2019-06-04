@@ -146,3 +146,35 @@ booWho(null);
 
 //Basic Algorithm Scritpting: Title Case a Sentence
 
+function titleCase(str) {
+    let regex = /(^|\s)\S/g;
+    str = str.toLowerCase();
+    console.log(str.match(regex));
+    str = str.replace(regex, (firstLetter) => firstLetter.toUpperCase());
+    return str;
+}
+
+titleCase("i'm a little tea pot");
+//Result I'm A Little Tea Pot
+
+//Basic Algorithm Scripting: Slice and Splice
+
+function frankenSplice(arr1, arr2, n) {
+    // It's alive. It's alive!
+    let sliced = arr1.slice(); //make a copy of arr1
+    let spliced = arr2.slice(); // make a copy of arr2
+    spliced.splice(n, 0, ...sliced);
+    return spliced;
+}
+
+frankenSplice([1, 2, 3], [4, 5, 6], 1);
+//Result [4,1,2,3,5,6]
+
+//Basic Algorithm Scripting: Falsy Bouncer
+
+function bouncer(arr) {
+    // Don't show a false ID to this bouncer.
+    return arr.filter(value => value !== false | value !== null | value !== 0 | value !== "" | value !== undefined | value !== NaN);
+}
+
+bouncer([7, "ate", "", false, 9]);
