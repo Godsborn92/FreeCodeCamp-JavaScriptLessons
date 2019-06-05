@@ -212,9 +212,10 @@ function getIndexToIns(arr, num) {
 getIndexToIns([40, 60], 500); // This Solution from freeCodeCamp however also suffered the same errors from the running tests 
 //Result 2
 
-//Final Solution for Where do I belong (kept it simple)
+//Final Solution for Where do I belong (keep simple)
 function getIndexToIns(arr, num) {
     arr.sort(function (a, b) {
+        //MDN Understand how the sort method functions "To compare numbers instead of strings, the compare function can simply subtract b from a"
         return a - b;
     });
 
@@ -229,3 +230,8 @@ getIndexToIns([40, 60, 70], 50);
 //Result 1
 
 //Basic Algorithm Scripting: Mutations
+function mutation(arr) {
+    return arr;
+}
+
+mutation(["hello", "hey"]);
