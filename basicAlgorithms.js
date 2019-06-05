@@ -174,7 +174,20 @@ frankenSplice([1, 2, 3], [4, 5, 6], 1);
 
 function bouncer(arr) {
     // Don't show a false ID to this bouncer.
-    return arr.filter(value => value !== false | value !== null | value !== 0 | value !== "" | value !== undefined | value !== NaN);
+    let newArr = arr.filter(arrValue => (arrValue === false) ? false : (arrValue === 0) ? false : (arrValue === null) ? false : (Number.isNaN(arrValue) !== false) ? false : (arrValue === undefined) ? false : (arrValue === "") ? false : true);
+    console.log(newArr);
+    return newArr;
 }
 
 bouncer([7, "ate", "", false, 9]);
+//Result [7, "ate", 9]
+
+//Basic Algorithm Scripting: Where do I Belong
+
+function getIndexToIns(arr, num) {
+    // Find my place in this sorted array.
+
+    return num;
+}
+
+getIndexToIns([40, 60], 50);
