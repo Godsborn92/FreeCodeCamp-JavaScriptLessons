@@ -186,8 +186,46 @@ bouncer([7, "ate", "", false, 9]);
 
 function getIndexToIns(arr, num) {
     // Find my place in this sorted array.
+    let comparisonNum = 0;
+    let newIndex = arr.sort((a, b) => a > b).findIndex(value => (value >= num) ? comparisonNum = value : comparisonNum);
+    (comparisonNum > num) ? arr.splice(newIndex, 0, num) : undefined;
+    console.log(comparisonNum);
+    console.log(newIndex);
+    console.log(arr);
 
-    return num;
+    return num = newIndex;
 }
 
-getIndexToIns([40, 60], 50);
+getIndexToIns([40, 60, 70], 50);
+//This my attempt at solving the problem mind the spaghetti code. I wanted to also to console log the changed arr with the added number in its correct index
+
+//This was more so the solution I was looking for ---From freeCodeCamp
+
+function getIndexToIns(arr, num) {
+    // sort and find right index
+    var index = arr.sort((curr, next) => curr > next)
+        .findIndex((currNum) => num <= currNum);
+    // Returns proper answer
+    return index === -1 ? arr.length : index;
+}
+
+getIndexToIns([40, 60], 500); // This Solution from freeCodeCamp however also suffered the same errors from the running tests 
+//Result 2
+
+//Final Solution for Where do I belong (kept it simple)
+function getIndexToIns(arr, num) {
+    arr.sort(function (a, b) {
+        return a - b;
+    });
+
+    for (var a = 0; a < arr.length; a++) {
+        if (arr[a] >= num)
+            return a;
+    }
+
+    return arr.length;
+}
+getIndexToIns([40, 60, 70], 50);
+//Result 1
+
+//Basic Algorithm Scripting: Mutations
