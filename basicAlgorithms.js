@@ -231,7 +231,34 @@ getIndexToIns([40, 60, 70], 50);
 
 //Basic Algorithm Scripting: Mutations
 function mutation(arr) {
-    return arr;
+    var test = arr[1].toLowerCase();
+    var target = arr[0].toLowerCase();
+    for (var i = 0; i < test.length; i++) {
+        if (target.indexOf(test[i]) < 0)
+            return false;
+    }
+    return true;
 }
 
-mutation(["hello", "hey"]);
+mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]);
+//Result true
+
+//Basic Algorithm Scripting: Chuncky Monkey
+
+function chunkArrayInGroups(arr, size) {
+    // Break it up.
+    let newArray = [];
+    for (let i = 0; i < arr.length; i += size) {
+        newArray.push(arr.slice(i, i + size));
+    }
+    return newArray;
+}
+
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
+//Result [[a,b],[c,d]]
+
+/*
+
+----------- End of Basic Algorithms Section -----------
+
+*/
